@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+Bundler.require(:default)
+
+result = JSON.parse(HTTP.get("http://numbersapi.com/random/year?json&fragment").body.to_s)
+
+puts "#{result.fetch("number")} - #{result.fetch("text")}"
