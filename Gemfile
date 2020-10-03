@@ -4,4 +4,9 @@ source "https://rubygems.org"
 
 ruby File.read(".ruby-version")
 
-# gem "rails"
+gem "http"
+gem "json"
+
+group :test do
+  gem "rspec"
+end
