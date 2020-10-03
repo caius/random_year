@@ -4,6 +4,6 @@
 require "bundler/setup"
 Bundler.require(:default)
 
-result = JSON.parse(HTTP.get("http://numbersapi.com/random/year?json").body.to_s)
+result = JSON.parse(HTTP.get("http://numbersapi.com/random/year?json&fragment").body.to_s)
 
-puts "#{result.fetch("text")}"
+puts "#{result.fetch("number")} - #{result.fetch("text")}"
